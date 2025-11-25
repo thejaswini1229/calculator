@@ -1,0 +1,53 @@
+:root{
+  --bg:#d0dcef;
+  --panel:#0b1220;
+  --accent:#c4aeeb;
+  --accent-2:#c4ecf3;
+  --button:#111827;
+  --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg), #071025 120%);
+  display:flex;align-items:center;justify-content:center;padding:24px;color:#e6eef8;
+}
+
+.calc-wrap{
+  width:100%;max-width:420px;border-radius:18px;padding:18px;background:linear-gradient(180deg,var(--panel), #071226);box-shadow:0 10px 30px rgba(2,6,23,0.7);
+}
+
+.display{
+  background:var(--glass);border-radius:12px;padding:14px 16px;margin-bottom:14px;display:flex;flex-direction:column;gap:6px;min-height:84px;align-items:flex-end;justify-content:center;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.sub-display{font-size:13px;color:var(--muted);min-height:18px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%;}
+.main-display{font-size:28px;font-weight:600;word-break:break-all;overflow:auto;max-width:100%;}
+
+.pad{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+}
+
+button.btn{
+  border:0;padding:16px;border-radius:12px;font-size:18px;background:linear-gradient(180deg,var(--button),#111827);color:#e6eef8;cursor:pointer;box-shadow:0 4px 10px rgba(2,6,23,0.6);transition:transform .08s ease, box-shadow .08s ease;
+}
+button.btn:active{transform:translateY(1px)}
+button.btn:hover{box-shadow:0 8px 18px rgba(207, 211, 229, 0.7)}
+
+.btn.operator{background:linear-gradient(180deg,var(--accent),#cab8e8);}
+.btn.operator.alt{background:linear-gradient(180deg,var(--accent-2),#0891b2);}
+.btn.equal{grid-row:span 2;background:linear-gradient(180deg,#cae0d9,#059669);font-weight:700;}
+.btn.zero{grid-column:span 2}
+
+.small{font-size:13px;padding:10px}
+
+@media (max-width:420px){
+  .main-display{font-size:22px}
+  button.btn{padding:14px;font-size:16px}
+}
+
+.hint{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}

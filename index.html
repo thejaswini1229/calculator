@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculator App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calc-wrap" aria-label="Calculator">
+    <div class="display" role="region" aria-live="polite">
+      <div class="sub-display" id="history" aria-hidden="false"></div>
+      <div class="main-display" id="display" aria-atomic="true">0</div>
+    </div>
+
+    <div class="pad" role="group" aria-label="calculator buttons">
+      <!-- row 1 -->
+      <button class="btn operator" data-action="clear" aria-label="clear">C</button>
+      <button class="btn operator" data-action="back" aria-label="delete">DEL</button>
+      <button class="btn operator" data-value="(" aria-label="open parenthesis">(</button>
+      <button class="btn operator" data-value=")" aria-label="close parenthesis">)</button>
+
+      <!-- row 2 -->
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn operator" data-value="/" aria-label="divide">÷</button>
+
+      <!-- row 3 -->
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn operator" data-value="*" aria-label="multiply">×</button>
+
+      <!-- row 4 -->
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn operator" data-value="-" aria-label="subtract">−</button>
+      <button class="btn operator" data-value="+" aria-label="add">+</button>
+
+      <!-- row 5 -->
+      <button class="btn zero" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn equal" data-action="eval" aria-label="equals">=</button>
+    </div>
+
+
+    <p class="hint">Tip: Keyboard supported (numbers, + - * / . ( ) Enter Backspace Escape).</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
